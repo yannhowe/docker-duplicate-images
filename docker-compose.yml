@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+
+  duplicate-images:
+    build: ./duplicate-images
+    links:
+    - duplicate-images-mongo
+
+  duplicate-images-mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
