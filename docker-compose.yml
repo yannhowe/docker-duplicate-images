@@ -5,11 +5,18 @@ services:
   duplicate-images:
     build: ./duplicate-images
     links:
-    - duplicate-images-mongo
+      - "duplicate-images-mongo"
+    depends_on:
+      - "duplicate-images-mongo"
+    command: ["./wait-for-it.sh", "duplicate-images-mongo:27017", "--", "python", "./duplicate_finder.py"]
 
   duplicate-images-mongo:
     image: mongo
     restart: always
+    ports: 
+      - "27017:27017"
+    volumes: 
+    - ./duplicate-images-mongo/data/db:/data/db
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
