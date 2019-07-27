@@ -160,7 +160,7 @@ def _add_to_database(file_, hash_, file_size, image_size, capture_time, db):
 
 
 def _in_database(file, db):
-    return db.estimated_document_count({"_id": file}) > 0
+    return db.count_documents({"_id": file}) > 0
 
 
 def new_image_files(files, db):
