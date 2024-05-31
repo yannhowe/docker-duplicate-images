@@ -15,7 +15,7 @@ more-itertools==7.2.0
 numpy==1.16.4
 olefile==0.46
 Pillow==6.1.0
-pymongo==3.8.0
+pymongo==4.6.3
 python-magic==0.4.15
 PyWavelets==1.0.3
 relaxml==0.1.3
