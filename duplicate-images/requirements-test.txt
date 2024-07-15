@@ -2,3 +2,4 @@ mongomock==3.8.0
 pyfakefs==3.2
 pytest==3.1.2
 pytest-cov==2.5.1
+setuptools>=70.0.0 # not directly required, pinned by Snyk to avoid a vulnerability
